@@ -1,0 +1,88 @@
+default_view:
+  view: yes
+  name: Home
+  icon: mdi:home
+  entities:
+    - group.insteon_lights
+    - group.switches
+    - group.casting_devices
+    - group.remotes
+
+weather_view:
+  view: yes
+  icon: mdi:weather-sunny
+  entities:
+    - group.hourly_forecast
+    - group.daily_forecast
+
+camera_view:
+  view: yes
+  icon: mdi:video
+  entities:
+    - group.arlo_cams
+    - sensor.uptime
+
+hourly_forecast:
+  name: Hourly Forecast
+  entities:
+    - sensor.pws_weather_1h
+    - sensor.pws_weather_2h
+    - sensor.pws_weather_3h
+    - sensor.pws_weather_4h
+    - sensor.pws_weather_5h
+    - sensor.pws_weather_6h
+    - sensor.pws_weather_7h
+    - sensor.pws_weather_8h
+
+daily_forecast:
+  name: Daily Forecast
+  entities:
+    - sensor.pws_alerts
+    - sensor.pws_weather_1d
+    - sensor.pws_weather_1n
+    - sensor.pws_weather_2d
+    - sensor.pws_weather_2n
+    - sensor.pws_weather_3d
+    - sensor.pws_weather_3n
+    - sensor.pws_weather_4d
+    - sensor.pws_weather_4n
+
+arlo_cams:
+  name: Arlo Cameras
+  entities:
+    - camera.basement
+    - camera.garage
+    - camera.garage_outside
+    - camera.jwk_patio
+    - camera.jwk_driveway
+    - camera.jwk_basement
+
+insteon_lights:
+  name: Insteon Lights
+  entities:
+    - light.3aa596
+    - light.3ad673
+
+remotes:
+  name: Remotes
+  entities:
+    - remote.harmony_hub
+
+switches:
+  name: Wemo Switches
+  entities:
+    - switch.basement_patio_light_switch
+    - switch.deck_flood_switch
+    - switch.garage_side_door_switch
+    - switch.great_room_wemo_mini
+    - switch.kitchen_east_wemo_mini
+    - switch.kitchen_west_wemo_mini
+
+casting_devices:
+  name: Casting Devices
+  entities:
+    - media_player.kitchen_home
+    - media_player.office_sonos
+    - media_player.chromecastbedroom
+    - media_player.chromecastgreatroom
+

@@ -1,0 +1,9 @@
+alias: Check sensor value and show notification
+trigger:
+  platform: numeric_state
+  entity_id: sensor.uptime
+  above: 0
+action:
+  service: persistent_notification.create
+  data:
+    message: "System is up.  This is a test."
