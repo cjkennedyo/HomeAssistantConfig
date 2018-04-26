@@ -1,0 +1,15 @@
+#########
+# Zones #
+#########
+
+- name: Home
+  latitude: !secret lat
+  longitude: !secret long
+  radius: 100
+  icon: mdi:home
+
+- name: Work
+  latitude: !secret kam_work_lat
+  longitude: !secret kam_work_long
+  radius: 100
+  icon: mdi:store

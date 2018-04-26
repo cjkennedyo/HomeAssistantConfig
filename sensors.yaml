@@ -51,28 +51,20 @@
 ############################################################
 
 - platform: google_travel_time
-  name: Home to Work Journey Time
-  api_key: Removed
+  name: To Work
+  api_key: !secret gmaps_key
   origin: zone.home
-  destination: removed
+  destination: zone.work
   options:
     units: imperial 
       
 - platform: google_travel_time
-  name: Work to Home Journey Time
-  api_key: Removed
-  origin: Removed
+  name: To Home
+  api_key: !secret gmaps_key
+  origin: zone.work
   destination: zone.home
   options:
-    units: imperial  
-      
-- platform: google_travel_time
-  name: Work to Home Journey Time Live Status
-  api_key: removed
-  origin: removed
-  destination: zone.home
-  options:
-    units: imperial  
+    units: imperial
   
 ############################################################
 ##     Sensor Config for Home Assistant Version           ##
@@ -115,10 +107,10 @@
   
 - platform: systemmonitor
   resources:
-    - type: 'disk_use_percent'
-      arg: '/'
-    - type: 'disk_free'
-      arg: '/'
+    - type: disk_use_percent
+      arg: /
+    - type: disk_free
+      arg: /
     - type: memory_free
     - type: load_1m
     - type: load_5m

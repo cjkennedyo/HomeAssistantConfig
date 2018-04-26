@@ -14,13 +14,54 @@ weather_view:
   entities:
     - group.hourly_forecast
     - group.daily_forecast
+    - group.sun_rise_set
 
 camera_view:
   view: yes
   icon: mdi:video
   entities:
     - group.arlo_cams
+
+stats_view:
+  view: yes
+  icon: mdi:gauge
+  entities:
     - sensor.uptime
+    - group.cpu_info
+    - group.sys_mon
+    - sensor.season
+    - sensor.current_version
+    - group.isp_speed
+    - group.commute_times
+
+sys_mon:
+  name: System Monitor
+  entities: 
+    - sensor.systemmonitor
+
+commute_times:
+  name: Commute Times
+  entities:
+    - sensor.to_work
+    - sensor.to_home
+
+isp_speed:
+  name: Speed Test
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+
+sun_rise_set:
+  name: Sun Rise and Set
+  entities:
+    - sensor.nextsunrise
+    - sensor.nextsunset
+
+cpu_info:
+  name: CPU Info
+  entities:
+    - sensor.cpu_speed
 
 hourly_forecast:
   name: Hourly Forecast
