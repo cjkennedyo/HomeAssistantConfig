@@ -79,11 +79,23 @@ camera:
 alarm_control_panel:
   - platform: arlo
 
-#panel_iframe:
-#  mdiindex:
-#    title: MDI Icon Index
-#    icon: mdi:vector-square
-#    url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
+# Rachio
+switch:
+  - platform: rachio
+    access_token: !secret rachio_token
+    manual_run_mins: 5
+
+panel_iframe:
+  rachio:
+    title: Rachio
+    url: "https://app.rach.io"
+    icon: mdi:water-pump
+
+panel_iframe:
+  mdiindex:
+    title: MDI Icon Index
+    icon: mdi:vector-square
+    url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
 
 group: !include groups.yaml
 automation: !include automations.yaml

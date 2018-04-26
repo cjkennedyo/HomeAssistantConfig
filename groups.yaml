@@ -39,6 +39,31 @@ sys_mon:
   entities: 
     - sensor.systemmonitor
 
+irrigation:
+  name: Irrigation
+  icon: mdi:water-pump
+  view: true
+  entities:
+  - group.rachio_zones_front
+  - group.rachio_zones_back
+
+rachio_zones_front:
+  name: Front Yard
+  view: false
+  entities:
+  - switch.front_grass_both_sides_of_driveway
+  - switch.front_grass_east
+  - switch.front_grass_west
+  - switch.front_garden
+
+rachio_zones_back:
+  name: Back Yard
+  view: false
+  entities:
+  - switch.back_grass_east
+  - switch.back_grass_west
+  - switch.back_grass_south
+
 commute_times:
   name: Commute Times
   entities:
