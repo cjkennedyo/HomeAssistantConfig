@@ -75,9 +75,24 @@ arlo:
 
 camera:
   - platform: arlo
+  - platform: generic
+    still_image_url: https://forecast.weather.gov/meteograms/Plotter.php?lat=39.9292&lon=-105.155&wfo=BOU&zcode=COZ039&gset=15&gdiff=3&unit=0&tinfo=MY7&ahour=0&pcmd=11011111111110000000000000000000000000000000000000000000000&lg=en&indu=1!1!1!&dd=&bw=&hrspan=48&pqpfhr=6&psnwhr=6
+    name: Hourly Weather Forecast Graph
+  - platform: generic
+    still_image_url: https://radar.weather.gov/Legend/N0R/FTG_N0R_Legend_0.gif
+    name: Denver Radar
+  - platform: generic
+    still_image_url: http://www.goes.noaa.gov/GIFS/WCI8.JPG
+    name: Western USA
 
-alarm_control_panel:
-  - platform: arlo
+
+#alarm_control_panel:
+#  - platform: arlo
+
+# Nest
+nest:
+  client_id: !secret nest_id
+  client_secret: !secret nest_secret
 
 # Rachio
 switch:

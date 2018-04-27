@@ -95,6 +95,60 @@
       value_template: "{{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom('%-H:%M') }}"
       icon_template: mdi:weather-sunset-down
 
+    solar_angle:
+      friendly_name: Sun Angle
+      unit_of_measurement: °
+      value_template: >-
+        {{ '%+.1f' | format(states.sun.sun.attributes.elevation) }}
+
+    temp_1h:
+      friendly_name: 1 hr
+      unit_of_measurement: °F
+      value_template: >-
+        {{ float(states.sensor.pws_weather_1h.attributes.temp_f) | round(0) }}
+
+    temp_2h:
+      friendly_name: '2 hr'
+      unit_of_measurement: "°F"
+      value_template: >-
+        {{ float(states.sensor.pws_weather_2h.attributes.temp_f) | round(0) }}
+    
+    temp_3h:
+      friendly_name: '3 hr'
+      unit_of_measurement: "°F"
+      value_template: >-
+        {{ float(states.sensor.pws_weather_3h.attributes.temp_f) | round(0) }}
+    
+    temp_4h:
+      friendly_name: '4 hr'
+      unit_of_measurement: "°F"
+      value_template: >-
+        {{ float(states.sensor.pws_weather_4h.attributes.temp_f) | round(0) }}
+
+    temp_5h:
+      friendly_name: '5 hr'
+      unit_of_measurement: "°F"
+      value_template: >-
+        {{ float(states.sensor.pws_weather_5h.attributes.temp_f) | round(0) }}
+
+    temp_6h:
+      friendly_name: '6 hr'
+      unit_of_measurement: "°F"
+      value_template: >-
+        {{ float(states.sensor.pws_weather_6h.attributes.temp_f) | round(0) }}
+
+    temp_7h:
+      friendly_name: '7 hr'
+      unit_of_measurement: "°F"
+      value_template: >-
+        {{ float(states.sensor.pws_weather_7h.attributes.temp_f) | round(0) }}
+
+    temp_8h:
+      friendly_name: '8 hr'
+      unit_of_measurement: "°F"
+      value_template: >-
+        {{ float(states.sensor.pws_weather_8h.attributes.temp_f) | round(0) }}
+
 ############################################################
 ##         Sensor Config for Home Assistant Uptime        ##
 ############################################################

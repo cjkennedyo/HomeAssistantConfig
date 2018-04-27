@@ -15,12 +15,19 @@ weather_view:
     - group.hourly_forecast
     - group.daily_forecast
     - group.sun_rise_set
+    - group.upcoming_temps
+    - camera.hourly_weather_forecast_graph
+    - camera.denver_radar
+    - camera.western_usa
 
 camera_view:
   view: yes
   icon: mdi:video
   entities:
+    - group.arlo_cam_battery
     - group.arlo_cams
+    - camera.kitchen
+    - climate.upstairs
 
 stats_view:
   view: yes
@@ -82,6 +89,19 @@ sun_rise_set:
   entities:
     - sensor.nextsunrise
     - sensor.nextsunset
+    - sensor.solar_angle
+
+upcoming_temps:
+  name: Temp by hour
+  entities:
+    - sensor.temp_1h
+    - sensor.temp_2h
+    - sensor.temp_3h
+    - sensor.temp_4h
+    - sensor.temp_5h
+    - sensor.temp_6h
+    - sensor.temp_7h
+    - sensor.temp_8h
 
 cpu_info:
   name: CPU Info
@@ -114,7 +134,7 @@ daily_forecast:
     - sensor.pws_weather_4n
 
 arlo_cams:
-  name: Arlo Cameras
+  name: Arlo Camera Images
   entities:
     - camera.basement
     - camera.garage
@@ -122,6 +142,13 @@ arlo_cams:
     - camera.jwk_patio
     - camera.jwk_driveway
     - camera.jwk_basement
+
+arlo_cam_battery:
+  name: Arlo Battery Levels
+  entities:
+    - sensor.battery_level_basement
+    - sensor.battery_level_garage
+    - sensor.battery_level_garage_outside
 
 insteon_lights:
   name: Insteon Lights
