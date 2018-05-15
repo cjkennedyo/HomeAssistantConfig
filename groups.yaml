@@ -12,12 +12,11 @@ weather_view:
   view: yes
   icon: mdi:weather-sunny
   entities:
+    - camera.hourly_weather_forecast_graph
+    - group.upcoming_temps
     - group.hourly_forecast
     - group.daily_forecast
     - group.sun_rise_set
-    - group.upcoming_temps
-    - camera.hourly_weather_forecast_graph
-    - camera.denver_radar
     - camera.western_usa
 
 camera_view:

@@ -51,20 +51,36 @@
 ############################################################
 
 - platform: google_travel_time
-  name: To Work
+  name: To Work car
   api_key: !secret gmaps_key
   origin: zone.home
   destination: zone.work
   options:
-    units: imperial 
-      
+    units: imperial
+
+#- platform: google_travel_time
+#  name: To Work bicycle
+#  api_key: !secret gmaps_key
+#  origin: zone.home
+#  destination: zone.work
+#  options:
+#    mode: bicycling
+
 - platform: google_travel_time
-  name: To Home
+  name: To Home car
   api_key: !secret gmaps_key
   origin: zone.work
   destination: zone.home
   options:
     units: imperial
+
+#- platform: google_travel_time
+#  name: To Home bicycle
+#  api_key: !secret gmaps_key
+#  origin: zone.work
+#  destination: zone.home
+#  options:
+#    mode: bicycling
   
 ############################################################
 ##     Sensor Config for Home Assistant Version           ##
