@@ -73,8 +73,10 @@ rachio_zones_back:
 commute_times:
   name: Commute Times
   entities:
-    - sensor.to_work
-    - sensor.to_home
+    - sensor.to_work_car
+    - sensor.to_home_car
+    - sensor.to_work_bicycle
+    - sensor.to_home_bicycle
 
 isp_speed:
   name: Speed Test
